@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion POC</title>
+</head>
+<body>
+  <div style="width:100vw; height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; font-family:sans-serif;">
+    <h1>Connexion POC</h1>
+    <form id="loginForm" style="display:flex; flex-direction:column; gap:10px; margin-top:20px; min-width:250px;">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit" style="margin-top:10px; padding:8px; cursor:pointer;">Se connecter</button>
+    </form>
+
+    <p id="message" style="margin-top:20px; font-weight:bold;"></p>
+  </div>
+
+  <script>
+    const passwordCorrect = "test1234";
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const enteredPassword = document.getElementById('password').value;
+
+      if (enteredPassword === passwordCorrect) {
+        message.style.color = "green";
+        message.textContent = "✅ connected !";
+      } else {
+        message.style.color = "red";
+        message.textContent = "❌ invalid password !";
+      }
+    });
+  </script>
+</body>
+</html>
