@@ -32,6 +32,11 @@
       width: 320px;
     }
 
+    .login-box:hover {
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
+
     h1 {
       margin-bottom: 25px;
       color: #ffffff;
@@ -117,10 +122,10 @@
       const enteredPassword = document.getElementById('password').value;
 
       if (enteredPassword === passwordCorrect) {
-        message.style.color = "#22c55e"; // vert
+        message.style.color = "#22c55e";
         message.textContent = "✅ Connected!";
       } else {
-        message.style.color = "#ef4444"; // rouge
+        message.style.color = "#ef4444";
         message.textContent = "❌ Invalid password!";
       }
     });
